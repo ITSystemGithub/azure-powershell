@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 5.5.0
 * Fixed file cmdlets potential context issue when the current context doesn't match with the credential of input Azure File object
     - `Close-AzStorageFileHandle`
     - `Get-AzStorageFile`

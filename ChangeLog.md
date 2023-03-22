@@ -1,3 +1,71 @@
+## 9.6.0 - April 2023
+#### Az.Accounts 2.12.1
+* Fixed an issue that broke some cmdlets in Az.Synapse module.
+
+#### Az.Aks 5.3.2
+* Decoupled AutoMapper dependency, replaced with AdapterHelper.
+
+#### Az.CognitiveServices 1.13.1
+* Removed notice and attestation from 'New-AzCognitiveServicesAccount'.
+
+#### Az.Compute 5.6.1
+* Removed the image alias 'CoreOS' as the publisher CoreOS no longer has any images for Azure. 
+* Updated the names of the 'openSUSE-Leap' and 'SLES' aliases to 'OpenSuseLeap154' and 'SuseSles15SP4' respectively. Updated these aliases to point to an image that actually exists and updated the alias names to be descriptive and versioned.
+* Added new descriptive and versioned alias names for the Linux image aliases.
+* Added '-NetworkAccessPolicy' parameter to 'New-AzSnapshotUpdateConfig'.
+* Added '-SharedGalleryImageId' parameter to 'New-AzVM', 'New-AzVmConfig', 'New-AzVmss', 'New-AzVmssConfig', 'Update-AzVmss', and 'Set-AzVmssStorageProfile'.
+* Updated 'Set-AzVMDiagnosticsExtension' to correct capitalization by passing 'StorageAccount' as configuration property instead of 'storageAccount'.
+
+#### Az.CosmosDB 1.10.0
+* Introduced restorable apis support for Gremlin and Table, which includes:
+    - Added the apis for RestorableGremlinDatabases, RestorableGremlinGraphs, RestorableGremlinResources,RestorableTables, RestorableResources.
+    - Added RetrieveContinuousBackupInfo apis for Gremlin and Table which help in determining the restore point of time and the resources to restore.
+    - Added GremlinDatabasesToRestore and TablesToRestore field to provision and restore database account api.
+    - Added StartTime and EndTime support for listing restorable containers event feed.
+
+#### Az.EventGrid 1.6.0
+* Adding fix for DeliveryAttributeMapping
+* Adding validation for StorageQueueTtl
+
+#### Az.Network 5.6.0
+* Added property 'AuthorizationStatus' to ExpressRouteCircuit
+* Added property 'BillingType' to ExpressRoutePort
+* Added support for connection flushing in network security group which when enabled, re-evaluates flows when rules are updated
+    - 'New-AzNetworkSecurityGroup'
+* Added support for state in WAF Custom Rule
+* Added 'New-AzGatewayCustomBgpIpConfigurationObject' command
+* Updated 'New-AzVirtualNetworkGatewayConnection', 'Set-AzVirtualNetworkGatewayConnection' and 'New-AzVpnSiteLinkConnection' to support GatewayCustomBgpIpConfiguration.
+* Updated 'Reset-AzVpnGateway' to support IpConfigurationId.
+* Blocked some regions when creating/updating Basic Sku firewall
+* Fixed bugs related to auto learn IP prefixes and Snat
+
+#### Az.Resources 6.6.0
+* Fixed an issue when running the 'New-AzManagementGroup' command where it tried to cast an async operation as a Management Group. [#21000]
+
+#### Az.SqlVirtualMachine 1.1.1
+* Added breaking change notification for SqlManagementType
+
+#### Az.Storage 5.5.0
+* Fixed file cmdlets potential context issue when the current context doesn't match with the credential of input Azure File object
+    - 'Close-AzStorageFileHandle'
+    - 'Get-AzStorageFile'
+    - 'Get-AzStorageFileContent'
+    - 'Get-AzStorageFileHandle'
+    - 'New-AzStorageDirectory'
+    - 'New-AzStorageFileSASToken'
+    - 'Remove-AzStorageDirectory'
+    - 'Remove-AzStorageFile'
+    - 'Remove-AzStorageShare'
+    - 'Set-AzStorageFileContent'
+    - 'Set-AzStorageShareQuota'
+    - 'Start-AzStorageFileCopy'
+
+#### Az.Websites 2.14.0
+* Added a new parametre '-SoftRestart' for 'Restart-AzWebApp' and 'Restart-AzWebApp' to perform a soft restart
+* Updated 'Get-AzWebApp' and 'Get-AzWebAppSlot' to expose 'VirtualNetwork Integration Info' [#10665]
+* Added a new parameter '-CopyIdentity' for 'New-AzWebAppSlot' to copy the identity from the parent app to the slot.
+* Updated 'New-AzWebAppSSLBinding' to support -WhatIf parameter
+
 ## 9.5.0 - March 2023
 #### Az.Accounts 2.12.0
 * Fixed the issue that errors related to WAM are thrown when it is not enabled. [#20871] [#20824]

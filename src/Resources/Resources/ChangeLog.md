@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 6.6.0
 * Fixed an issue when running the `New-AzManagementGroup` command where it tried to cast an async operation as a Management Group. [#21000]
 
 ## Version 6.5.3

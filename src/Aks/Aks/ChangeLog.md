@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 5.3.2
 * Decoupled AutoMapper dependency, replaced with AdapterHelper.
 
 ## Version 5.3.1
